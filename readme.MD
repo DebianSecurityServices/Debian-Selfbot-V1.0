@@ -2,7 +2,9 @@ download python3
 
 For Windows:
 
-and run setup.bat
+run setup.bat
+
+
 For Linux:
 
 python3 -m pip install -r requirements.txt
