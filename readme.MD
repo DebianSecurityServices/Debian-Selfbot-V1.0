@@ -1,6 +1,7 @@
-download python3
+first step is to download python3.
 
 For Windows:
+
 
 run setup.bat
 
