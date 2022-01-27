@@ -113,6 +113,7 @@ async def playgame(ctx, *, message):
         name=message
     )
     await bot.change_presence(activity=game)
+    print(f"\n\033[94mPlaying {message} Successfully!!! \033[91m \n")
 
 @bot.command()
 async def listen(ctx, *, message): 
@@ -122,6 +123,7 @@ async def listen(ctx, *, message):
             type=discord.ActivityType.listening, 
             name=message, 
         ))
+    print(f"\n\033[94mListening {message} Successfully!!! \033[91m \n")
 
 @bot.command()
 async def watch(ctx, *, message): 
@@ -131,6 +133,7 @@ async def watch(ctx, *, message):
             type=discord.ActivityType.watching, 
             name=message
         ))
+    print(f"\n\033[94mWatching {message} Successfully!!! \033[91m \n")
 
 @bot.command(aliases=['markasread', 'ack'])
 async def read(ctx): 
@@ -582,7 +585,3 @@ token = config.get('token')
 
 
 bot.run(token, bot=False)
-
-
-
-
