@@ -3,4 +3,5 @@ discord
 colorama
 pyfiglet
 requests==2.26.0
+PySocks
 
