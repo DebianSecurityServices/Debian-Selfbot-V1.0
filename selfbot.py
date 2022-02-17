@@ -66,7 +66,7 @@ with open('./config.json') as f:
 prefix = config.get('prefix')
 
 bot = commands.Bot(
-    description='Vampires Selfbot',
+    description='Hawk Debian\'s Selfbot',
     command_prefix=prefix,
     self_bot=True
 )
