@@ -66,7 +66,7 @@ with open('./config.json') as f:
 prefix = config.get('prefix')
 
 bot = commands.Bot(
-    description='Hawk Debian\'s Selfbot',
+    description='Vampires Selfbot',
     command_prefix=prefix,
     self_bot=True
 )
@@ -114,7 +114,59 @@ async def playgame(ctx, *, message):
     )
     await bot.change_presence(activity=game)
     print(f"\n\033[94mPlaying {message} Successfully!!! \033[91m \n")
+    
+@bot.command()
+async def slap(ctx, member:discord.Member = None):
+   await ctx.message.delete()
+   print(f"\n\033[94mSlapping Successfully!!! \033[91m \n")
+   if member == ctx.author:
+     await ctx.send(f"{ctx.author} Dummy why tf you wanna slap yourself?")
+   elif member == None:
+     await ctx.send(f"```Mention someone to slap```")
+   else:
+   
+     await ctx.send(f"***{ctx.author.mention} Slapped {member.mention}!***")
+     await ctx.send("https://media.giphy.com/media/uqSU9IEYEKAbS/giphy.gif")
 
+
+
+
+@bot.command()
+async def pic(ctx, *, message): 
+    await ctx.message.delete()
+    await ctx.send(f"https://source.unsplash.com/random/720x600/?{message}")
+    print(f"\n\033[94mSent {message} Pic Successfully!!! \033[91m \n")
+@bot.command()
+async def feed(ctx, member:discord.Member = None, *, message=""):
+    await ctx.message.delete()
+    feedGIF = ["https://thumbs.gfycat.com/EagerSpectacularHoverfly-max-14mb.gif", "https://i.imgur.com/1vC0R20.gif"]
+    gif11 = random.choice(feedGIF)
+
+    if (member == ctx.author or member == None):
+        feedSelfResponse = [
+            f"{ctx.author.mention} feeds them selves. So eating?",
+            f"{ctx.author.mention} feeds themselves yum!",
+            f"{ctx.author.mention} is feeding their hungry stomach",
+            f"{ctx.author.mention} is being fed by... themselves",
+        ]
+        feed = random.choice(feedSelfResponse)
+        embed = discord.Embed(color=0x9b59b6)
+        embed.set_image(url=random.choice(feedGIF))
+        embed.add_field(name="Feed", value=(feed))
+        await ctx.send(f"***{feed}***")
+        await ctx.send(gif11)
+    else:
+        feedResponse = [ 
+            f"{ctx.author.mention} feeds {member.mention}",
+            f"{member.mention} is being feed by {ctx.author.mention}. Open wide!",
+            f"Yum! {ctx.author.mention} feeds {member.mention}. Here comes the airplane!",    
+        ]  
+        feed = random.choice(feedResponse)
+        embed = discord.Embed(color=0x9b59b6)
+        embed.set_image(url=random.choice(feedGIF))
+        embed.add_field(name="Feed", value=(feed))
+        await ctx.send(f"***{feed}***")
+        await ctx.send(gif11)
 @bot.command()
 async def listen(ctx, *, message): 
     await ctx.message.delete()
@@ -134,6 +186,8 @@ async def watch(ctx, *, message):
             name=message
         ))
     print(f"\n\033[94mWatching {message} Successfully!!! \033[91m \n")
+
+
 
 @bot.command(aliases=['markasread', 'ack'])
 async def read(ctx): 
@@ -163,6 +217,12 @@ async def help(ctx):
 #clear       -clears console window.
 
 #read       -reads all channel messages.
+
+#slap {username}       -slaps the mentioned user.
+
+#feed {username}       -feeds the mentioned user.
+
+#pic {name}       -searches the pic with specified name.
 
 #stream [message]     -streams whatever ya wanna stream.
 
@@ -228,6 +288,9 @@ async def help(ctx):
     [*] #ascii [message]       -converts message to ascii.
     [*] #delchannels       -deletes all channels.
     [*] #delroles       -deletes all roles.
+    [*] #slap {username}       -slaps the mentioned user.
+    [*] #feed {username}       -feeds the mentioned user.
+    [*] #pic {name}       -searches the pic with specified name.
     [*] #exit       -exits out of application.'''
 
 
@@ -585,3 +648,7 @@ token = config.get('token')
 
 
 bot.run(token, bot=False)
+
+
+
+
