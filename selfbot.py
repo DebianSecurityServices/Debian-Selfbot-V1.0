@@ -32,14 +32,15 @@ def banner():
 \033[93m
 
 
-████████╗██╗  ██╗███████╗██████╗ ███████╗██████╗ ██╗ █████╗ ███╗   ██╗
-╚══██╔══╝██║  ██║██╔════╝██╔══██╗██╔════╝██╔══██╗██║██╔══██╗████╗  ██║
-   ██║   ███████║█████╗  ██║  ██║█████╗  ██████╔╝██║███████║██╔██╗ ██║
-   ██║   ██╔══██║██╔══╝  ██║  ██║██╔══╝  ██╔══██╗██║██╔══██║██║╚██╗██║
-   ██║   ██║  ██║███████╗██████╔╝███████╗██████╔╝██║██║  ██║██║ ╚████║
-   ╚═╝   ╚═╝  ╚═╝╚══════╝╚═════╝ ╚══════╝╚═════╝ ╚═╝╚═╝  ╚═╝╚═╝  ╚═══╝
-                                                                      
-                                                               
+
+██╗  ██╗ █████╗ ██╗    ██╗██╗  ██╗
+██║  ██║██╔══██╗██║    ██║██║ ██╔╝
+███████║███████║██║ █╗ ██║█████╔╝ 
+██╔══██║██╔══██║██║███╗██║██╔═██╗ 
+██║  ██║██║  ██║╚███╔███╔╝██║  ██╗
+╚═╝  ╚═╝╚═╝  ╚═╝ ╚══╝╚══╝ ╚═╝  ╚═╝
+                                  
+
 made by TheDebian
 
 type #help for list of commands
@@ -129,7 +130,11 @@ async def slap(ctx, member:discord.Member = None):
      await ctx.send("https://media.giphy.com/media/uqSU9IEYEKAbS/giphy.gif")
 
 
-
+@bot.command()
+async def trump(ctx, *, message="Hawk Debian Selfbot, join dsc.gg/hsu"): 
+    await ctx.message.delete()
+    msg = message.replace(' ', '+')
+    await ctx.send("https://faketrumptweets.herokuapp.com/tweet?text=" + msg)
 
 @bot.command()
 async def pic(ctx, *, message): 
@@ -214,6 +219,8 @@ async def help(ctx):
 
 #embed [message]       -send embed message.
 
+#trump [message]       -send trump twitter message.
+
 #clear       -clears console window.
 
 #read       -reads all channel messages.
@@ -274,6 +281,7 @@ async def help(ctx):
     [*] #playgame [message]     -plays whatever ya wanna play.
     [*] #listen [message]     -listens whatever ya wanna listen.
     [*] #watch [essage]     -watches whatever ya wanna watch.
+    [*] #trump [message]       -send trump twitter message.
     [*] #ping [Hostnaname]     -pings the IP/Webhost.
     [*] #recon [username]     -runs a reconnaissance to find that username in all social media.
     [*] #ddos [IP] [Port]     -uses the slowloris ddos attack at IP address.
