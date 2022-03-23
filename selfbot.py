@@ -225,11 +225,11 @@ async def help(ctx):
 
 #read       -reads all channel messages.
 
-#slap {username}       -slaps the mentioned user.
+#slap [username]       -slaps the mentioned user.
 
-#feed {username}       -feeds the mentioned user.
+#feed [username]       -feeds the mentioned user.
 
-#pic {name}       -searches the pic with specified name.
+#pic [name]       -searches the pic with specified name.
 
 #stream [message]     -streams whatever ya wanna stream.
 
@@ -237,7 +237,7 @@ async def help(ctx):
 
 #listen [message]     -listens whatever ya wanna listen.
 
-#watch [essage]     -watches whatever ya wanna watch.
+#watch [message]     -watches whatever ya wanna watch.
 
 #ping [Hostnaname]     -pings the IP/Webhost.
 
